@@ -1,0 +1,81 @@
+==============================
+Employee Information
+==============================
+
+Employee Name: Naveen Kumar
+Employee ID: EMP10245
+
+Email: naveen.kumar@example.com
+Personal Email: naveen123@gmail.com
+
+Phone: 9876543210
+Alternate Phone: 9123456789
+
+PAN Number: ABCDE1234F
+
+Aadhaar Number: 2345 6789 1234
+
+Passport Number: P1234567
+
+Driving License: TN1420230012345
+
+Bank Name: State Bank of India
+
+Account Number: 1234567890123456
+
+IFSC Code: SBIN0001234
+
+UPI ID: naveen@oksbi
+
+Credit Card Number: 4111 1111 1111 1111
+
+CVV: 123
+
+Expiry Date: 12/29
+
+Password: MyPassword@123
+
+API Key:
+sk-test-1234567890abcdefghijklmnop
+
+GitHub Token:
+ghp_abcdefghijklmnopqrstuvwxyz123456
+
+AWS Access Key:
+AKIAIOSFODNN7EXAMPLE
+
+JWT Token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload.signature
+
+Private Key:
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASC...
+-----END PRIVATE KEY-----
+
+==============================
+CONFIDENTIAL
+==============================
+
+This document contains confidential business information.
+
+Internal Use Only
+
+Employee Salary: ₹95,000/month
+
+Annual Bonus: ₹2,50,000
+
+Project Name: Phoenix AI
+
+Customer Database should not be shared.
+
+Trade Secret:
+New AI model architecture for document classification.
+
+Business Strategy:
+Expansion into the healthcare sector in 2027.
+
+Merger discussions with XYZ Technologies are confidential.
+
+Payroll information is strictly restricted.
+
+Do not distribute this document outside the organization.

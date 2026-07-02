@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Sensitive_Data_Compliance_Assistant"
+    ]
+}
