@@ -13,6 +13,10 @@
 
 ---
 
+**[🌐 View Working Prototype / Deployment](#)**
+
+---
+
 ### 🔒 Detect • Analyze • Classify • Redact • Summarize
 
 An AI-powered compliance assistant that automatically detects sensitive information from documents, classifies security risks, generates compliance reports, performs intelligent document Q&A, and redacts confidential information — **completely offline using Local Ollama + Llama 3.**
@@ -348,7 +352,17 @@ http://localhost:8501
 
 ---
 
-# 🤖 AI Model
+# 🤖 AI/ML Approach Used
+
+This project utilizes a multi-layered hybrid AI/ML pipeline for maximum accuracy and privacy:
+1. **Computer Vision & OCR**: Employs `PaddleOCR` and `pdfplumber` to perform optical character recognition on scanned PDFs and images, enabling text extraction regardless of the document's original format.
+2. **Deterministic NLP & Regex**: Utilizes highly optimized Regular Expressions and checksum validation algorithms (like the Luhn algorithm for Credit Cards) to ensure zero-false-positive detection of strictly formatted PII and financial data.
+3. **Retrieval-Augmented Generation (RAG)**: Integrates `FAISS` vector databases and `LangChain` to dynamically chunk and retrieve document context, overcoming the context-window limitations of standard LLMs.
+4. **Local Generative AI**: Uses `Ollama` and the `Llama-3` foundational model to analyze the retrieved context, generate executive compliance reports, and answer natural language queries completely offline, ensuring zero data leakage.
+
+---
+
+# 🧠 AI Model Details
 
 Model
 
@@ -373,6 +387,14 @@ API Cost
 ```text
 ₹0
 ```
+
+---
+
+# ⚠️ Challenges Faced
+
+- **Scanned PDF Accuracy**: Accurately extracting text from heavily pixelated or skewed scanned PDFs required implementing a robust OCR fallback (`PaddleOCR`) specifically tuned to recognize structured data.
+- **Regex False Positives**: Differentiating between generic 10-digit numbers (like Bank Accounts) and Phone Numbers required highly specific negative lookaheads and algorithmic deduplication in the detection engine to prevent overlapping categories.
+- **Offline RAG Latency**: Running complex RAG pipelines on a local machine without API keys initially caused high latency. This was solved by chunking document processing efficiently and strictly optimizing the FAISS vector retrieval size.
 
 ---
 
