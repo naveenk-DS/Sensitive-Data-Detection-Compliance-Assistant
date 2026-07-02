@@ -6,6 +6,7 @@
 
 <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Streamlit-Web_App-red?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Gemini_API-Cloud_LLM-blueviolet?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Ollama-Local_LLM-success?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Llama3-Local_AI-orange?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/OCR-PaddleOCR-yellow?style=for-the-badge"/>
@@ -19,7 +20,7 @@
 
 ### 🔒 Detect • Analyze • Classify • Redact • Summarize
 
-An AI-powered compliance assistant that automatically detects sensitive information from documents, classifies security risks, generates compliance reports, performs intelligent document Q&A, and redacts confidential information — **completely offline using Local Ollama + Llama 3.**
+An AI-powered compliance assistant that automatically detects sensitive information from documents, classifies security risks, generates compliance reports, performs intelligent document Q&A, and redacts confidential information — **featuring a dual-mode AI engine supporting both Cloud (Gemini) and completely Offline (Local Ollama) execution.**
 
 </div>
 
@@ -94,24 +95,19 @@ Supports
 
 ---
 
-## 🧠 Local AI
+## 🧠 Dual-Mode AI Architecture
 
-This project **does NOT require OpenAI API**.
+This project features a seamless LLM Abstraction Layer (`llm/factory.py`) allowing you to instantly toggle between two AI modes via the UI sidebar:
 
-Everything runs locally using
+### Mode 1: Cloud Deployment (Google Gemini)
+- **Uses**: `gemini-1.5-flash` API.
+- **Benefits**: Extremely fast, requires zero local hardware, ideal for deploying to Render or Streamlit Community Cloud. 
 
-- Ollama
-- Llama 3
+### Mode 2: Enterprise Offline (Local Ollama)
+- **Uses**: Local `llama3` model.
+- **Benefits**: 100% private, no internet required, zero API costs. Data never leaves your machine.
 
-Benefits
-
-✔ No Internet Required
-
-✔ No API Cost
-
-✔ Better Privacy
-
-✔ Faster Development
+*If Gemini is selected but the API key is missing, the application features an automatic fallback to Ollama to prevent crashes!*
 
 ---
 
@@ -159,8 +155,8 @@ Benefits
 |------------|----------|
 | Python | Backend |
 | Streamlit | UI |
-| Ollama | Local LLM Runtime |
-| Llama3 | AI Model |
+| Google Gemini API | Cloud LLM Backend |
+| Ollama & Llama3 | Local LLM Runtime |
 | PaddleOCR | OCR |
 | pdfplumber | PDF Parsing |
 | PyMuPDF | PDF Redaction |
@@ -364,29 +360,15 @@ This project utilizes a multi-layered hybrid AI/ML pipeline for maximum accuracy
 
 # 🧠 AI Model Details
 
-Model
+**Mode 1 (Cloud):**
+- **Model**: `gemini-1.5-flash`
+- **Inference**: Online API
+- **Cost**: Free Tier (15 RPM / 1M Tokens per minute)
 
-```text
-Llama 3
-```
-
-Running
-
-```text
-Ollama
-```
-
-Inference
-
-```text
-Offline
-```
-
-API Cost
-
-```text
-₹0
-```
+**Mode 2 (Local):**
+- **Model**: `llama3`
+- **Inference**: Offline via Ollama
+- **Cost**: ₹0 (Runs on local hardware)
 
 ---
 
